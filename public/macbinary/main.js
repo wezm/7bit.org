@@ -18,6 +18,7 @@ async function readMacbinary(event, details, error) {
         setField('type', res.type);
         setField('creator', res.creator);
         setField('data_fork_len', res.data_fork.length);
+        setField('rsrc_fork_len', res.rsrc_fork_len);
         const downloadDataLink = document.getElementById('download_data_fork');
         downloadDataLink.href = URL.createObjectURL(new Blob(
             [ res.data_fork ],
