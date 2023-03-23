@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Decode MacBinary Online - 7bit.org</title>
+  <style type="text/css">
+    html {
+      padding 0 1em;
+    }
+    html, body {
+      box-sizing: border-box;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Avenir, 'Avenir Next LT Pro', Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+    }
+    h1,h2,h3 {
+      line-height: 1.2; 
+    }
+
+    .wrapper {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      margin: 0px auto;
+      max-width: 650px;
+      line-height: 1.6;
+      font-size: 18px;
+      color: #222;
+      padding: 0 10px;
+    }
+    header, main, footer {
+      flex-shrink: 0;
+    }
+    main {
+      flex-grow: 1;
+    }
+    table {
+      border-collapse: collapse;
+      min-width: 75%;
+    }
+    th {
+      text-align: left;
+      border-bottom: 1px solid currentColor;
+    }
+    td img {
+      vertical-align: text-top;
+    }
+    dt {
+      font-weight: bold;
+    }
+    dd {
+      margin: 0 0 1em;
+    }
+    footer {
+      font-size: smaller;
+      text-align: center;
+      padding-bottom: 1em;
+    }
+    footer aside {
+      text-align: left;
+    }
+    .help-text {
+      font-size: smaller;
+      font-style: italic;
+    }
+    .text-centre {
+      text-align: center;
+    }
+    .hidden {
+      display: none;
+    }
+    .socials {
+      margin: 2em 0 1em;
+      line-height: 1.5;
+    }
+    .socials a {
+      text-transform:uppercase;
+      font-weight:600;
+      font-size:12px;
+      letter-spacing:1px;
+      color:#888;
+      padding:0 0.5em;
+      text-decoration:none
+    }
+    #download_data_fork {
+      margin-left: 2em;
+    }
+    @media all and (max-width: 500px) {
+      table {
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Decode MacBinary</h1>
+      <p>
+        This page allows inspection and downloading of individual coponents in
+        <a href="https://en.wikipedia.org/wiki/MacBinary">MacBinary</a>
+        encoded files. All processing is done client-side via Rust compiled to WebAssembly.
+      </p>
+    </header>
+
+    <main>
+      <form>
+        <input type="file" name="file" required>
+        <input type="submit" name="read" value="Read">
+        <p class="help-text">
+          Select a MacBinary file and press the Read button to view its details.
+          Don't have a MacBinary file handy?
+          <a href="https://github.com/wezm/macbinary/raw/main/tests/Text%20File.bin">Here's one you can try</a>.
+        </p>
+      </form>
+
+      <!-- TODO: Change into template -->
+      <div id="details" class="hidden">
+        <h2>Details</h2>
+
+        <dl>
+          <dt>Filename<dt>
+          <dd id="filename"></dd>
+          <dt>Created<dt>
+          <dd id="created"></dd>
+          <dt>Modified<dt>
+          <dd id="modified"></dd>
+          <dt>Type<dt>
+          <dd><code id="type"></code></dd>
+          <dt>Creator<dt>
+          <dd ><code id="creator"></code></dd>
+          <dt>Data Fork<dt>
+          <dd>
+            Size: <span id="data_fork_len"></span>
+            <a href="#" id="download_data_fork"><img src="download-icon.svg" width="16" alt=""> Download</a>
+          </dd>
+          <dt>Resources</dt>
+          <dd id="resources">
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>ID</th>
+                  <th>Size</th>
+                  <th>Name</th>
+                  <th class="text-centre">Download</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </dd>
+      </div>
+
+      <div id="error" class="hidden">
+        <h2>Error</h2>
+
+        <p></p>
+      </div>
+
+      <template id="resource">
+        <tr>
+          <td><code></code></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="text-centre"><a href="#"><img src="download-icon.svg" width="18" alt="Download"></a></td>
+        </tr>
+      </template>
+    </main>
+
+    <footer>
+      <aside>
+        <h2>About</h2>
+
+        <p>I built a <a href="https://github.com/wezm/macbinary">Rust library to parse MacBinary files</a>
+          and resource forks and created this
+          page as something of testbed. It should be able to read MacBinary I, II, and III files.
+          If you encounter a file that can't be read
+          <a href="https://github.com/wezm/macbinary/issues">please let me know</a>.
+          Download icon by Desainer Kanan from
+          <a href="https://thenounproject.com/icon/download-2849790/">Noun Project</a>.
+        </p>
+      </aside>
+
+      <div class="socials">
+        <a href="https://mastodon.decentralised.social/@wezm">Fediverse</a>
+        <a href="https://twitter.com/wezm">Twitter</a>
+        <a href="https://github.com/wezm/7bit.org/tree/main/public/macbinary">Website Source</a>
+        <a href="https://github.com/wezm/macbinary">Library Source</a>
+      </div>
+      &copy; 2023 <a href="https://www.wezm.net/">Wesley Moore</a>
+    </footer>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
