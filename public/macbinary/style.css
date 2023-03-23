@@ -1,0 +1,89 @@
+html {
+  padding 0 1em;
+}
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Avenir, 'Avenir Next LT Pro', Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+}
+h1,h2,h3 {
+  line-height: 1.2; 
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  margin: 0px auto;
+  max-width: 650px;
+  line-height: 1.6;
+  font-size: 18px;
+  color: #222;
+  padding: 0 10px;
+}
+header, main, footer {
+  flex-shrink: 0;
+}
+main {
+  flex-grow: 1;
+}
+table {
+  border-collapse: collapse;
+  min-width: 75%;
+}
+th {
+  text-align: left;
+  border-bottom: 1px solid currentColor;
+}
+td img {
+  vertical-align: text-top;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin: 0 0 1em;
+}
+footer {
+  font-size: smaller;
+  text-align: center;
+  padding-bottom: 1em;
+}
+footer aside {
+  text-align: left;
+}
+.help-text {
+  font-size: smaller;
+  font-style: italic;
+}
+.text-centre {
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+.socials {
+  margin: 2em 0 1em;
+  line-height: 1.5;
+}
+.socials a {
+  text-transform:uppercase;
+  font-weight:600;
+  font-size:12px;
+  letter-spacing:1px;
+  color:#888;
+  padding:0 0.5em;
+  text-decoration:none
+}
+#download_data_fork {
+  margin-left: 2em;
+}
+@media all and (max-width: 500px) {
+  table {
+    min-width: 100%;
+  }
+}
