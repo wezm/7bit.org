@@ -7,4 +7,4 @@ deploy:
 
 # rsync to production (www.7bit.org)
 deploy_www:
-    rsync -avzhP --delete www.7bit.org/ hardforze.binarytrance.com:infrastructure/volumes/www/www.7bit.org/
+    rsync -avzhP www.7bit.org/ hardforze.binarytrance.com:infrastructure/volumes/www/www.7bit.org/
