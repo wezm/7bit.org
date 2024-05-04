@@ -1,0 +1,86 @@
+html {
+  padding: 0 1em;
+}
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Avenir, "Avenir Next LT Pro", Montserrat, Corbel, "URW Gothic",
+    source-sans-pro, sans-serif;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+header,
+main,
+footer {
+  flex-shrink: 0;
+}
+main {
+  flex-grow: 1;
+}
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+}
+summary {
+  cursor: pointer;
+}
+footer {
+  font-size: smaller;
+  text-align: center;
+  padding-bottom: 1em;
+}
+footer aside {
+  text-align: left;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  margin: 0px auto;
+  max-width: 650px;
+  line-height: 1.6;
+  font-size: 18px;
+  color: #222;
+  padding: 0 10px;
+}
+.help-text {
+  font-size: smaller;
+  font-style: italic;
+  margin: 0;
+}
+#result {
+  margin-top: 2em;
+}
+.copy-text {
+  margin: 0 0 0.5em 0.5em;
+}
+.text-centre {
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+.pull-right {
+  float: right;
+}
+.socials {
+  margin: 2em 0 1em;
+  line-height: 1.5;
+}
+.socials a {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #888;
+  padding: 0.5em;
+  text-decoration: none;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Convert Text to Titlecase - 7bit.org</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Titlecase</h1>
+        <p>
+          Convert text to titlecase. Conversion is done intelligently,
+          respecting words like iPhone, Q&amp;A, and preserving lowercase small
+          words like
+          <em>an</em>, <em>in</em>, and <em>of</em>.
+        </p>
+      </header>
+
+      <main>
+        <form>
+          <textarea rows="5" name="inputtext"></textarea>
+          <input
+            type="submit"
+            name="go"
+            value="Titlecase"
+            class="pull-right"
+            disabled
+          />
+          <p class="help-text">Enter text to convert to titlecase.</p>
+        </form>
+
+        <div id="result" class="hidden">
+          <h2>Result</h2>
+
+          <button class="copy-text pull-right hidden">Copy</button>
+          <span class="result-text"></span>
+        </div>
+
+        <div id="error" class="hidden">
+          <h2>Error</h2>
+
+          <p></p>
+        </div>
+      </main>
+
+      <footer>
+        <aside>
+          <h2>About</h2>
+
+          <p>All processing on this page is done client-side.</p>
+
+          <details>
+            <summary>More information</summary>
+
+            <p>
+              I built a
+              <a href="https://github.com/wezm/titlecase"
+                >Rust library to convert text to titlecase</a
+              >
+              according to
+              <a href="https://daringfireball.net/2008/05/title_case"
+                >a style defined by John Gruber</a
+              >
+              for post titles on his website
+              <a href="https://daringfireball.net/">Daring Fireball</a>. This
+              page uses that library via
+              <a href="https://www.rust-lang.org/">Rust</a> compiled to
+              WebAssembly.
+            </p>
+
+            <p>
+              Instead of simply capitalizing each word
+              <code>titlecase</code> does the following (amongst other things):
+            </p>
+
+            <ul>
+              <li>Lower case small words like an, of, or in.</li>
+              <li>Don't capitalize words like iPhone.</li>
+              <li>
+                Don't interfere with file paths, URLs, domains, and email
+                addresses.
+              </li>
+              <li>
+                Always capitalize the first and last words, even if they are
+                small words or surrounded by quotes.
+              </li>
+              <li>Don't interfere with terms like "Q&amp;A", or "AT&amp;T".</li>
+              <li>Capitalize small words after a colon.</li>
+            </ul>
+          </details>
+        </aside>
+
+        <div class="socials">
+          <a href="/">Home</a>
+          <a href="https://mastodon.decentralised.social/@wezm">Fediverse</a>
+          <a href="https://github.com/wezm/7bit.org/tree/main/public/titlecase"
+            >Website Source</a
+          >
+          <a href="https://github.com/wezm/titlecase">Library Source</a>
+        </div>
+        &copy; 2024 <a href="https://www.wezm.net/">Wesley Moore</a>
+      </footer>
+    </div>
+
+    <script type="module" src="main.js"></script>
+    <script
+      data-goatcounter="https://7bit.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
+  </body>
+</html>
