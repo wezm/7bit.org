@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block body %}
+<h2>{{ page.title }}</h2>
+<p>{{ page.date }}</p>
+{{ page.content | safe }}
+{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en">
+<head>
+	<title>Wes' Retro Corner - {% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="basics.css" type="text/css">
+</head>
+<body background="/images/bg.gif">
+    <center>
+        <table width="640">
+            <tr valign="middle">
+                <td colspan="2" width="55%" height="75"><!-- are percentages legit? -->
+                    <h1>Wes' Retro Corner</h1>
+                </td>
+                <td width="15%" align="right"><a href="/">Home</a></td>
+                <td width="15%" align="right"><a href="#">Blog</a> <a href="/feed/"><img src="/images/rss.gif"></a></td>
+                <td width="15%" align="right"><a href="/about/">About</a></td>
+            <tr>
+                <td colspan="5">
+                    {% block body %}{% endblock %}
+
+
+                    <hr>
+
+                    <font size="-2">
+                    &copy; 2021 &ndash; {{ now() | date(format="%Y") }} Copyright Wesley Moore<br>
+                        Links marked with
+                    <img src="/images/lock.gif"> are HTTPS links unlikely to
+                        be accessible on retro computers.
+                    </font>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
