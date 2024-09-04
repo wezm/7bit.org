@@ -14,6 +14,9 @@ See {% https(href="https://7bit.org/") %}7bit.org{% end %} for other projects.
 * Feedlynx
 -->
 
+## Pages
+
+* [Blog](@/blog/_index.md)
 * [My Retro Computers](@/computers.md)
 
 ## More Retro Corners

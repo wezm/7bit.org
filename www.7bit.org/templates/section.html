@@ -4,6 +4,15 @@
 {% block body %}
 {{ section.content | safe }}
 
+<h2>Blog</h2>
+
+<ul>
+{% set section = get_section(path="blog/_index.md") %}
+{% for page in section.pages | sort(attribute="date") | reverse | slice(end=10) %}
+  <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+{% endfor %}
+</ul>
+
 <a href="https://kernel.org/"><img src="/images/linuxpowered.gif"></a>
 <a href="https://kernel.org/"><img src="/images/logosml.32.gif"></a>
 <a href="https://mozilla.org/firefox"><img src="/images/getfirefox.gif"></a>
